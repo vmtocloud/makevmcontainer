@@ -24,4 +24,4 @@ RUN echo "/usr/bin/pwsh" >> /etc/shells && \
     tdnf clean all
 COPY makevm.ps1 makevm.ps1
 
-CMD ["/bin/pwsh /root/makevm.ps1"]
+CMD ["/bin/pwsh"]

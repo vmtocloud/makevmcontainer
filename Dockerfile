@@ -22,6 +22,6 @@ RUN echo "/usr/bin/pwsh" >> /etc/shells && \
     find / -name "net45" | xargs rm -rf && \
     tdnf erase -y unzip && \
     tdnf clean all
-COPY makevm.ps1 /root/makevm.ps1
+COPY makevm.ps1 makevm.ps1
 
-CMD ["/bin/pwsh /root/makevm.ps1"]
+CMD ["/bin/pwsh .\makevm.ps1"]

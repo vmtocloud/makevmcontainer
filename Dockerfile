@@ -18,10 +18,10 @@ RUN echo "/usr/bin/pwsh" >> /etc/shells && \
     unzip PowerCLI-Example-Scripts.zip && \
     rm -f PowerCLI-Example-Scripts.zip && \
     mv ./PowerCLI-Example-Scripts-* ./PowerCLI-Example-Scripts && \
-    mv ./PowerCLI-Example-Scripts/Modules/* /usr/lib/powershell/Modules/ && \
+    mv ./PowerCLI-Example-Scripts/Modules/* /usr/lib/powershell/Modules/ && \ 
     find / -name "net45" | xargs rm -rf && \
     tdnf erase -y unzip && \
     tdnf clean all
+COPY makevm.ps1 makevm.ps1
 
-
-CMD ["/bin/pwsh"]
+CMD ["/bin/pwsh /root/makevm.ps1"]

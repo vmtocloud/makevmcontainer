@@ -23,5 +23,5 @@ RUN echo "/usr/bin/pwsh" >> /etc/shells && \
     tdnf erase -y unzip && \
     tdnf clean all
 COPY makevm.ps1 makevm.ps1
-
-CMD ["/bin/pwsh .\makevm.ps1"]
+RUN chmod +x makevm.ps1
+CMD ./makevm.ps1
